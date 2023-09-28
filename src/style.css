@@ -1,0 +1,39 @@
+* {
+  font-family: "Calligraffitti", cursive;
+  font-family: "Mooli", sans-serif;
+}
+body {
+  background: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/rain.gif");
+  position: relative;
+  border-radius: 10px;
+  height: 50vh;
+  width: 50vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.content > * {
+  flex: 1;
+}
+
+.locInfo {
+  color: white;
+  border: 1px solid black;
+}
+
+.location {
+  font-size: xx-large;
+}
