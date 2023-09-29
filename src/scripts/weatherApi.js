@@ -3,13 +3,12 @@ import { domMain } from "./domMan";
 
 async function weatherApi(lat, log) {
   try {
-    const weather = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=4f780fb9d0a940998b1133518232609&q=${lat},${log}`,
-      { mode: "cors" }
+    const foreWeather = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=4f780fb9d0a940998b1133518232609&q=${lat},${log}&days=7`
     );
-    const currentWeather = await weather.json();
-    console.log(currentWeather);
-    domMain.display(currentWeather);
+    const forcastWeather = await foreWeather.json();
+    console.log(forcastWeather);
+    domMain.display(forcastWeather);
   } catch (err) {
     console.log(err);
   }

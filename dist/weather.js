@@ -22,49 +22,131 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./assets/rain.gif */ "./src/assets/rain.gif"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./assets/day.jpg */ "./src/assets/day.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `* {
   font-family: "Calligraffitti", cursive;
   font-family: "Mooli", sans-serif;
+  user-select: none;
 }
 
 body {
   background: antiquewhite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0px;
   height: 100vh;
-}
-
-.content {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${___CSS_LOADER_URL_REPLACEMENT_0___});
-  position: relative;
-  border-radius: 10px;
-  height: 50vh;
-  width: 50vw;
+  background: linear-gradient(rgba(124, 124, 124, 0.2), rgba(124, 124, 124, 0.2)), url(${___CSS_LOADER_URL_REPLACEMENT_0___});
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 10px;
-  padding: 20px;
+}
+
+#locationTime {
+  top: 30px;
+  left: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-.content > * {
+#currentTime {
+  margin: 10px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
 }
 
-.locInfo {
-  color: white;
-  border: 1px solid black;
+#currentTime > #year {
+  font-size: x-large;
 }
 
 .location {
   font-size: xx-large;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sCAAA;EACA,gCAAA;AACF;;AACA;EACE,wBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;AAEF;;AACA;EACE,4GAAA;EAEA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,WAAA;EACA,sBAAA;EACA,4BAAA;EAEA,mBAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;AAAF;;AAEA;EACE,OAAA;AACF;;AAEA;EACE,YAAA;EACA,uBAAA;AACF;;AAEA;EACE,mBAAA;AACF","sourcesContent":["* {\n  font-family: \"Calligraffitti\", cursive;\n  font-family: \"Mooli\", sans-serif;\n}\nbody {\n  background: antiquewhite;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n}\n\n.content {\n  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),\n    url(\"./assets/rain.gif\");\n  position: relative;\n  border-radius: 10px;\n  height: 50vh;\n  width: 50vw;\n  background-size: cover;\n  background-repeat: no-repeat;\n\n  border-radius: 10px;\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n}\n.content > * {\n  flex: 1;\n}\n\n.locInfo {\n  color: white;\n  border: 1px solid black;\n}\n\n.location {\n  font-size: xx-large;\n}\n"],"sourceRoot":""}]);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  color: aliceblue;
+}
+
+.temp {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.sliderBox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#box {
+  height: 40px;
+  border-radius: 20px;
+  width: 80px;
+  background: rgb(132, 172, 109);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#txt {
+  padding: 0px 12px 0px 12px;
+}
+
+#box:hover {
+  cursor: pointer;
+}
+
+#slider {
+  height: 32px;
+  width: 32px;
+  border: 1px solid gold;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  margin: 0px 5px 0px 5px;
+  border-radius: 50%;
+  background: green;
+}
+
+#today {
+  padding: 30px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+#today > div {
+  flex: 1;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+}
+
+#today > div > img {
+  height: 50px;
+  padding-right: 5px;
+}
+
+.title {
+  font-size: larger;
+  padding-bottom: 7px;
+}
+
+#forecastData {
+  flex: 1;
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sCAAA;EACA,gCAAA;EACA,iBAAA;AACF;;AACA;EACE,wBAAA;EACA,WAAA;EACA,aAAA;EACA,wHAAA;EAKA,sBAAA;EACA,4BAAA;AAFF;;AAKA;EACE,SAAA;EACA,UAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,aAAA;AAFF;;AAKA;EACE,YAAA;EACA,OAAA;EACA,aAAA;EACA,sBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,kBAAA;AAFF;;AAKA;EACE,mBAAA;AAFF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;EACA,mBAAA;AADF;;AAIA;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,yBAAA;AADF;;AAIA;EACE,YAAA;EACA,mBAAA;EACA,WAAA;EACA,8BAAA;EACA,aAAA;EACA,2BAAA;EACA,8BAAA;EACA,mBAAA;EACA,gDAAA;AADF;;AAIA;EACE,0BAAA;AADF;;AAIA;EACE,eAAA;AADF;;AAIA;EACE,YAAA;EACA,WAAA;EACA,sBAAA;EACA,sCAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;AADF;;AAIA;EACE,aAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,0BAAA;AADF;;AAIA;EACE,YAAA;EACA,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;AADF","sourcesContent":["* {\n  font-family: \"Calligraffitti\", cursive;\n  font-family: \"Mooli\", sans-serif;\n  user-select: none;\n}\nbody {\n  background: antiquewhite;\n  margin: 0px;\n  height: 100vh;\n  background: linear-gradient(\n      rgba(124, 124, 124, 0.2),\n      rgba(124, 124, 124, 0.2)\n    ),\n    url(\"./assets/day.jpg\");\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n#locationTime {\n  top: 30px;\n  left: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  padding: 20px;\n}\n\n#currentTime {\n  margin: 10px;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  font-size: larger;\n}\n\n#currentTime > #year {\n  font-size: x-large;\n}\n\n.location {\n  font-size: xx-large;\n}\n.content {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  height: 100%;\n  color: aliceblue;\n}\n\n.temp {\n  font-size: xx-large;\n  font-weight: bolder;\n}\n\n.sliderBox {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: flex-end;\n}\n\n#box {\n  height: 40px;\n  border-radius: 20px;\n  width: 80px;\n  background: rgb(132, 172, 109);\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);\n}\n\n#txt {\n  padding: 0px 12px 0px 12px;\n}\n\n#box:hover {\n  cursor: pointer;\n}\n\n#slider {\n  height: 32px;\n  width: 32px;\n  border: 1px solid gold;\n  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);\n  margin: 0px 5px 0px 5px;\n  border-radius: 50%;\n  background: green;\n}\n\n#today {\n  padding: 30px;\n  border: 1px solid red;\n  display: flex;\n  flex-direction: row;\n}\n\n#today > div {\n  flex: 1;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 10px 0px 10px;\n}\n\n#today > div > img {\n  height: 50px;\n  padding-right: 5px;\n}\n\n.title {\n  font-size: larger;\n  padding-bottom: 7px;\n}\n\n#forecastData {\n  flex: 1;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -565,55 +647,293 @@ module.exports = styleTagTransform;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   domMain: () => (/* binding */ domMain)
+/* harmony export */   domMain: () => (/* binding */ domMain),
+/* harmony export */   getInfo: () => (/* binding */ getInfo)
 /* harmony export */ });
+/* harmony import */ var _assets_thermometer_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/thermometer.png */ "./src/assets/thermometer.png");
+/* harmony import */ var _assets_rain_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/rain.png */ "./src/assets/rain.png");
+/* harmony import */ var _assets_humidity_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/humidity.png */ "./src/assets/humidity.png");
+/* harmony import */ var _assets_visibility_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/visibility.png */ "./src/assets/visibility.png");
+/* harmony import */ var _assets_wind_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/wind.png */ "./src/assets/wind.png");
+
+
+
+
+
+
+function updateTime(date) {
+  console.log(date);
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const monthsOfYear = [
+    "January",
+    "February",
+    "march",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December.",
+  ];
+
+  const dateRaw = date.split(" ")[0];
+  const timeStr = date.split(" ")[1];
+
+  const dateData = new Date(dateRaw);
+  const dayOfWeek = daysOfWeek[dateData.getDay()];
+  const monthOfYear = monthsOfYear[dateData.getMonth()];
+  console.log(monthOfYear);
+
+  const year = dateRaw.split("-")[0];
+  const tarik = dateRaw.split("-")[1];
+
+  const [hour, minute] = timeStr.split(":");
+
+  const formattedHour = hour % 12 || 12;
+
+  const ampm = hour > 12 ? "PM" : "AM";
+  const timeNow = `${formattedHour}:${minute} ${ampm}`;
+
+  return {
+    timeNow,
+    year,
+    tarik,
+    monthOfYear,
+    dayOfWeek,
+  };
+}
+let html = "";
+
+// eslint-disable-next-line consistent-return
+function recursiveUpdateHour(weather, currentHour, num) {
+  if (num === 0) {
+    console.log(html);
+    return html;
+  }
+
+  if (currentHour < 24) {
+    html += weather[0].hour[currentHour + 1].temp_c;
+
+    recursiveUpdateHour(weather, currentHour + 1, num - 1);
+  } else {
+    html += weather[1].hour[0].temp_c;
+    recursiveUpdateHour(weather, 0, num - 1);
+  }
+}
+
+function updateForcast(weather) {
+  console.log(weather);
+
+  const forecast = document.querySelector("#forecastData");
+
+  const hourForecast = document.createElement("div");
+  hourForecast.id = "hourlyForecast";
+  const currentHour = new Date().getHours();
+  recursiveUpdateHour(weather, currentHour, 5);
+  const dailyForecast = document.createElement("div");
+  dailyForecast.id = "dailyForecast";
+
+  forecast.textContent = "a";
+}
+
+const getInfo = (() => {
+  const locationTodayWeatherInfo = (currentWeather) => {
+    const locationName = currentWeather.location.name;
+
+    const locationCountry = currentWeather.location.country;
+
+    const tempInDegC = `${currentWeather.current.temp_c}℃`;
+
+    const tempInDegF = `${currentWeather.current.temp_f}°F`;
+
+    const feelsLikeDegC = `${currentWeather.current.feelslike_c}℃`;
+
+    const feelsLikeDegF = `${currentWeather.current.feelslike_f}°F`;
+
+    const condition = currentWeather.current.condition.text;
+
+    const visibility = `${currentWeather.current.vis_km} KM`;
+
+    const humidityy = `${currentWeather.current.humidity}%`;
+
+    const forcastToday = currentWeather.forecast.forecastday[0];
+
+    const windSpeed = `${currentWeather.current.wind_kph} KM/PH`;
+
+    const high = `${forcastToday.day.maxtemp_c} ℃`;
+
+    const low = `${forcastToday.day.mintemp_c} ℃`;
+
+    const chanceOfRain = `${forcastToday.day.daily_chance_of_rain}%`;
+
+    return {
+      locationName,
+      locationCountry,
+      tempInDegC,
+      tempInDegF,
+      feelsLikeDegC,
+      feelsLikeDegF,
+      condition,
+      visibility,
+      humidityy,
+      windSpeed,
+      chanceOfRain,
+      high,
+      low,
+    };
+  };
+
+  return {
+    locationTodayWeatherInfo,
+  };
+})();
+
 // eslint-disable-next-line import/prefer-default-export
 const domMain = (() => {
   const body = document.querySelector("body");
 
+  const updateCurrTime = (date) => {
+    if (document.querySelector("#currentTime")) {
+      document
+        .querySelector("time")
+        .removeChild(document.querySelector("#currentTime"));
+    }
+
+    const curTime = document.createElement("div");
+    curTime.id = "currentTime";
+    curTime.innerHTML = "";
+    const dateInfo = updateTime(date);
+
+    curTime.innerHTML = `
+        <div id="year">
+          ${dateInfo.year}
+        </div>
+        <div id="cdate">
+          ${dateInfo.monthOfYear} ${dateInfo.tarik}
+        </div>
+        <div id="ttime">
+          ${dateInfo.timeNow}
+        </div>
+      `;
+
+    document.querySelector("#time").appendChild(curTime);
+  };
+
   const display = (currentWeather) => {
     const content = document.createElement("div");
+    content.classList.value = "content";
+    content.innerHTML = "";
 
-    const daysOfWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    const dateStr = currentWeather.location.localtime.split(" ")[0];
-    const timeStr = currentWeather.location.localtime.split(" ")[1];
+    console.log("update");
 
-    const date = new Date(dateStr);
-    const dayOfWeek = daysOfWeek[date.getDay()];
-
-    const [hour, minute] = timeStr.split(":");
-
-    const formattedHour = hour % 12 || 12;
-
-    const ampm = hour > 12 ? "PM" : "AM";
-
-    console.log(dateStr, timeStr);
+    const weather = getInfo.locationTodayWeatherInfo(currentWeather);
 
     content.innerHTML = `
-        <div class='content'>
-          <div class="locInfo">
-            <div class="locTime">
-              <div class="location">${currentWeather.location.name}, ${currentWeather.location.country}</div>
-              <div class="time">${dateStr}, ${dayOfWeek} ${formattedHour}:${minute} ${ampm}. </div>
+        <div id="locationTime">
+          <div class="location">
+            ${currentWeather.location.name}, ${currentWeather.location.country}
+          </div>
+          <div id ="time"></div>
+          <div class="temp">${weather.tempInDegC}</div>
+          <div>High-Low: ${weather.high} - ${weather.low}</div>
+        </div>
+        <div id="today">
+          <div class="celcius">
+            <img src="${_assets_thermometer_png__WEBPACK_IMPORTED_MODULE_0__}">
+            <div>
+              <div class="title">
+                Feels Like
+              </div>
+              <div>
+                ${weather.feelsLikeDegC}
+              </div>
             </div>
-            <div class="currWeather">
-              <div id="deg">${currentWeather.current.temp_c}℃</div>
+          </div>
+
+          <div class="condition">
+            <img src=${currentWeather.current.condition.icon}>
+            <div>
+              <div class="title">
+                Condition
+              </div>
+              <div>
+                ${weather.condition}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="${_assets_rain_png__WEBPACK_IMPORTED_MODULE_1__}">
+            <div>
+              <div class="title">
+                Precipitation
+              </div>
+              <div>
+                ${weather.chanceOfRain}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="${_assets_visibility_png__WEBPACK_IMPORTED_MODULE_3__}">
+            <div>
+              <div class="title">
+                Visibility
+              </div>
+              <div>
+                ${weather.visibility}
+              </div>
             </div>
           </div>
           <div>
-            
+            <img src="${_assets_humidity_png__WEBPACK_IMPORTED_MODULE_2__}">
+            <div>
+              <div class="title">
+                Humidity
+              </div>
+              <div>
+                ${weather.humidityy}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="${_assets_wind_png__WEBPACK_IMPORTED_MODULE_4__}">
+            <div>
+              <div class="title">
+                Wind Speed
+              </div>
+              <div>
+                ${weather.windSpeed}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div id="forecastData">
+        
+        </div>
+        <div class="sliderBox">
+          <div id="box">
+            <div id="slider"></div>
+            <div id="txt">C</div>
           </div>
         </div>
-                    `;
+      `;
     body.appendChild(content);
+    updateCurrTime(currentWeather.location.localtime);
+    updateForcast(currentWeather.forecast.forecastday);
   };
 
   return {
@@ -638,13 +958,12 @@ __webpack_require__.r(__webpack_exports__);
 
 async function weatherApi(lat, log) {
   try {
-    const weather = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=4f780fb9d0a940998b1133518232609&q=${lat},${log}`,
-      { mode: "cors" }
+    const foreWeather = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=4f780fb9d0a940998b1133518232609&q=${lat},${log}&days=7`
     );
-    const currentWeather = await weather.json();
-    console.log(currentWeather);
-    _domMan__WEBPACK_IMPORTED_MODULE_0__.domMain.display(currentWeather);
+    const forcastWeather = await foreWeather.json();
+    console.log(forcastWeather);
+    _domMan__WEBPACK_IMPORTED_MODULE_0__.domMain.display(forcastWeather);
   } catch (err) {
     console.log(err);
   }
@@ -656,14 +975,69 @@ navigator.geolocation.getCurrentPosition((data) => {
 
 /***/ }),
 
-/***/ "./src/assets/rain.gif":
+/***/ "./src/assets/day.jpg":
+/*!****************************!*\
+  !*** ./src/assets/day.jpg ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "day.jpg";
+
+/***/ }),
+
+/***/ "./src/assets/humidity.png":
+/*!*********************************!*\
+  !*** ./src/assets/humidity.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "humidity.png";
+
+/***/ }),
+
+/***/ "./src/assets/rain.png":
 /*!*****************************!*\
-  !*** ./src/assets/rain.gif ***!
+  !*** ./src/assets/rain.png ***!
   \*****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "rain.gif";
+module.exports = __webpack_require__.p + "rain.png";
+
+/***/ }),
+
+/***/ "./src/assets/thermometer.png":
+/*!************************************!*\
+  !*** ./src/assets/thermometer.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "thermometer.png";
+
+/***/ }),
+
+/***/ "./src/assets/visibility.png":
+/*!***********************************!*\
+  !*** ./src/assets/visibility.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "visibility.png";
+
+/***/ }),
+
+/***/ "./src/assets/wind.png":
+/*!*****************************!*\
+  !*** ./src/assets/wind.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "wind.png";
 
 /***/ })
 
