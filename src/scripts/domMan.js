@@ -144,7 +144,7 @@ export const getInfo = (() => {
 
 // eslint-disable-next-line import/prefer-default-export
 export const domMain = (() => {
-  const body = document.querySelector("body");
+  const mainContent = document.querySelector("#content");
 
   const updateCurrTime = (date) => {
     if (document.querySelector("#currentTime")) {
@@ -272,7 +272,7 @@ export const domMain = (() => {
           </div>
         </div>
       `;
-    body.appendChild(content);
+    mainContent.appendChild(content);
     updateCurrTime(currentWeather.location.localtime);
     updateForcast(currentWeather.forecast.forecastday);
   };
@@ -281,18 +281,17 @@ export const domMain = (() => {
     const hourForecast = document.querySelector("#hourlyForecast");
     let html = "";
 
-    hours.forEach((hour) => {
+    hours.forEach((hour, index) => {
       const [dishours, minute] = hour.time.split(" ")[1].split(":");
 
       let formattedHour = dishours % 12 || dishours;
-      console.log(formattedHour);
       formattedHour = formattedHour == 0 ? 12 : formattedHour;
       const ampm = dishours >= 12 ? "pm" : "am";
       const displayTime = `${formattedHour}:${minute} ${ampm}`;
 
       html += `
               <div>
-                <div class="forTime">${displayTime}</div>
+                <div class="forTime">${index ? displayTime : "Current"}</div>
                 <div class="hour">
                   <img src=${hour.condition.icon}>
                   <div>${hour.temp_c} ℃</div>
@@ -322,7 +321,11 @@ export const domMain = (() => {
     weather.forEach((day, index) => {
       html += `<div>
                 <div class="day">${
-                  daysOfWeek[nDay + index > 6 ? nDay + index - 7 : nDay + index]
+                  index
+                    ? daysOfWeek[
+                        nDay + index > 6 ? nDay + index - 7 : nDay + index
+                      ]
+                    : "Today"
                 }</div>
                 <div class="imm">
                   <div>

@@ -16,6 +16,10 @@ body {
   background-repeat: no-repeat;
 }
 
+#content {
+  height: 100%;
+}
+
 #locationTime {
   top: 30px;
   left: 50px;
@@ -122,6 +126,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px);
 }
 
 #forecastData > * {
@@ -192,17 +197,41 @@ form {
   top: 50px;
   right: calc((100vw / 2) - 15vw);
   z-index: 1;
-  border: 1px solid black;
   display: flex;
 }
 
 form > input {
+  box-sizing: border-box;
+  outline: none;
   width: 100%;
   height: 40px;
   padding-left: 20px;
   font-size: larger;
+  background: inherit;
+  border: 2px solid wheat;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  transition: 0.3s ease all;
+  color: aliceblue;
+}
+
+form > input:focus {
+  border: none;
+  border: 2px solid rgb(169, 199, 169);
 }
 
 form > button {
   width: 20%;
+  background: inherit;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  color: aliceblue;
+  font-weight: bolder;
+  transition: 0.3s ease all;
+  border: none;
+}
+
+form > button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgb(183, 199, 212);
 }
