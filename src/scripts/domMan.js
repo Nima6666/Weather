@@ -5,7 +5,6 @@ import visibilityImg from "../assets/visibility.png";
 import windImg from "../assets/wind.png";
 
 function updateTime(date) {
-  console.log(date);
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -36,7 +35,6 @@ function updateTime(date) {
   const dateData = new Date(dateRaw);
   const dayOfWeek = daysOfWeek[dateData.getDay()];
   const monthOfYear = monthsOfYear[dateData.getMonth()];
-  console.log(monthOfYear);
 
   const year = dateRaw.split("-")[0];
   const tarik = dateRaw.split("-")[1];
@@ -45,7 +43,7 @@ function updateTime(date) {
 
   const formattedHour = hour % 12 || 12;
 
-  const ampm = hour > 12 ? "PM" : "AM";
+  const ampm = hour >= 12 ? "PM" : "AM";
   const timeNow = `${formattedHour}:${minute} ${ampm}`;
 
   return {
@@ -56,38 +54,40 @@ function updateTime(date) {
     dayOfWeek,
   };
 }
-let html = "";
 
 // eslint-disable-next-line consistent-return
-function recursiveUpdateHour(weather, currentHour, num) {
-  if (num === 0) {
-    console.log(html);
-    return html;
+function recursiveUpdateHour(weather, currentHour, hours, count, index) {
+  if (count < 0) {
+    return;
   }
 
-  if (currentHour < 24) {
-    html += weather[0].hour[currentHour + 1].temp_c;
-
-    recursiveUpdateHour(weather, currentHour + 1, num - 1);
+  if (currentHour > 23) {
+    hours.push(weather[1].hour[index]);
+    recursiveUpdateHour(weather, currentHour, hours, count - 1, index + 1);
   } else {
-    html += weather[1].hour[0].temp_c;
-    recursiveUpdateHour(weather, 0, num - 1);
+    hours.push(weather[0].hour[currentHour]);
+    recursiveUpdateHour(weather, currentHour + 1, hours, count - 1, index);
   }
 }
 
 function updateForcast(weather) {
-  console.log(weather);
+  const hours = [];
 
   const forecast = document.querySelector("#forecastData");
 
   const hourForecast = document.createElement("div");
   hourForecast.id = "hourlyForecast";
   const currentHour = new Date().getHours();
-  recursiveUpdateHour(weather, currentHour, 5);
+  recursiveUpdateHour(weather, currentHour, hours, 23, 0);
+  forecast.appendChild(hourForecast);
+
+  domMain.displayHouryForecast(hours);
+
   const dailyForecast = document.createElement("div");
   dailyForecast.id = "dailyForecast";
+  forecast.appendChild(dailyForecast);
 
-  forecast.textContent = "a";
+  domMain.displayDailyForecast(weather);
 }
 
 export const getInfo = (() => {
@@ -163,7 +163,7 @@ export const domMain = (() => {
           ${dateInfo.year}
         </div>
         <div id="cdate">
-          ${dateInfo.monthOfYear} ${dateInfo.tarik}
+          ${dateInfo.monthOfYear} ${dateInfo.tarik} ${dateInfo.dayOfWeek}
         </div>
         <div id="ttime">
           ${dateInfo.timeNow}
@@ -177,8 +177,6 @@ export const domMain = (() => {
     const content = document.createElement("div");
     content.classList.value = "content";
     content.innerHTML = "";
-
-    console.log("update");
 
     const weather = getInfo.locationTodayWeatherInfo(currentWeather);
 
@@ -279,7 +277,69 @@ export const domMain = (() => {
     updateForcast(currentWeather.forecast.forecastday);
   };
 
+  const displayHouryForecast = (hours) => {
+    const hourForecast = document.querySelector("#hourlyForecast");
+    let html = "";
+
+    hours.forEach((hour) => {
+      const [dishours, minute] = hour.time.split(" ")[1].split(":");
+
+      let formattedHour = dishours % 12 || dishours;
+      console.log(formattedHour);
+      formattedHour = formattedHour == 0 ? 12 : formattedHour;
+      const ampm = dishours >= 12 ? "pm" : "am";
+      const displayTime = `${formattedHour}:${minute} ${ampm}`;
+
+      html += `
+              <div>
+                <div class="forTime">${displayTime}</div>
+                <div class="hour">
+                  <img src=${hour.condition.icon}>
+                  <div>${hour.temp_c} ℃</div>
+                </div>
+              </div>
+      `;
+    });
+
+    hourForecast.innerHTML = html;
+  };
+
+  const displayDailyForecast = (weather) => {
+    let html = "";
+
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const nDay = new Date().getDay();
+
+    weather.forEach((day, index) => {
+      html += `<div>
+                <div class="day">${
+                  daysOfWeek[nDay + index > 6 ? nDay + index - 7 : nDay + index]
+                }</div>
+                <div class="imm">
+                  <div>
+                    <div class="max">${day.day.maxtemp_c}℃</div>
+                    <div class="min">${day.day.mintemp_c}℃</div> 
+                  </div>
+                  <img src=${day.day.condition.icon}>
+                </div>
+              </div>`;
+    });
+
+    document.querySelector("#dailyForecast").innerHTML = html;
+  };
+
   return {
     display,
+    displayHouryForecast,
+    displayDailyForecast,
   };
 })();

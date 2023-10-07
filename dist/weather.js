@@ -120,7 +120,6 @@ body {
 
 #today {
   padding: 30px;
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
 }
@@ -146,7 +145,92 @@ body {
 
 #forecastData {
   flex: 1;
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sCAAA;EACA,gCAAA;EACA,iBAAA;AACF;;AACA;EACE,wBAAA;EACA,WAAA;EACA,aAAA;EACA,wHAAA;EAKA,sBAAA;EACA,4BAAA;AAFF;;AAKA;EACE,SAAA;EACA,UAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,aAAA;AAFF;;AAKA;EACE,YAAA;EACA,OAAA;EACA,aAAA;EACA,sBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,kBAAA;AAFF;;AAKA;EACE,mBAAA;AAFF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;EACA,mBAAA;AADF;;AAIA;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,yBAAA;AADF;;AAIA;EACE,YAAA;EACA,mBAAA;EACA,WAAA;EACA,8BAAA;EACA,aAAA;EACA,2BAAA;EACA,8BAAA;EACA,mBAAA;EACA,gDAAA;AADF;;AAIA;EACE,0BAAA;AADF;;AAIA;EACE,eAAA;AADF;;AAIA;EACE,YAAA;EACA,WAAA;EACA,sBAAA;EACA,sCAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;AADF;;AAIA;EACE,aAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,0BAAA;AADF;;AAIA;EACE,YAAA;EACA,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;AADF","sourcesContent":["* {\n  font-family: \"Calligraffitti\", cursive;\n  font-family: \"Mooli\", sans-serif;\n  user-select: none;\n}\nbody {\n  background: antiquewhite;\n  margin: 0px;\n  height: 100vh;\n  background: linear-gradient(\n      rgba(124, 124, 124, 0.2),\n      rgba(124, 124, 124, 0.2)\n    ),\n    url(\"./assets/day.jpg\");\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n#locationTime {\n  top: 30px;\n  left: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  padding: 20px;\n}\n\n#currentTime {\n  margin: 10px;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  font-size: larger;\n}\n\n#currentTime > #year {\n  font-size: x-large;\n}\n\n.location {\n  font-size: xx-large;\n}\n.content {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  height: 100%;\n  color: aliceblue;\n}\n\n.temp {\n  font-size: xx-large;\n  font-weight: bolder;\n}\n\n.sliderBox {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: flex-end;\n}\n\n#box {\n  height: 40px;\n  border-radius: 20px;\n  width: 80px;\n  background: rgb(132, 172, 109);\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);\n}\n\n#txt {\n  padding: 0px 12px 0px 12px;\n}\n\n#box:hover {\n  cursor: pointer;\n}\n\n#slider {\n  height: 32px;\n  width: 32px;\n  border: 1px solid gold;\n  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);\n  margin: 0px 5px 0px 5px;\n  border-radius: 50%;\n  background: green;\n}\n\n#today {\n  padding: 30px;\n  border: 1px solid red;\n  display: flex;\n  flex-direction: row;\n}\n\n#today > div {\n  flex: 1;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 10px 0px 10px;\n}\n\n#today > div > img {\n  height: 50px;\n  padding-right: 5px;\n}\n\n.title {\n  font-size: larger;\n  padding-bottom: 7px;\n}\n\n#forecastData {\n  flex: 1;\n}\n"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#forecastData > * {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+}
+
+#hourlyForecast {
+  align-items: center;
+}
+
+#hourlyForecast > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forTime {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.hour {
+  width: 14.3vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .hour > div {
+  width: 14.3vw;
+} */
+.hour > img {
+  height: 80px;
+}
+
+#dailyForecast > div > .day {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#dailyForecast > div > .imm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dailyForecast > div > .imm > div > .max {
+  font-size: larger;
+}
+
+#dailyForecast > * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  position: absolute;
+  width: 30vw;
+  top: 50px;
+  right: 35vw;
+  z-index: 1;
+  border: 1px solid black;
+  display: flex;
+}
+
+form > input {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  font-size: larger;
+}
+
+form > button {
+  width: 20%;
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sCAAA;EACA,gCAAA;EACA,iBAAA;AACF;;AACA;EACE,wBAAA;EACA,WAAA;EACA,aAAA;EACA,wHAAA;EAKA,sBAAA;EACA,4BAAA;AAFF;;AAKA;EACE,SAAA;EACA,UAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,aAAA;AAFF;;AAKA;EACE,YAAA;EACA,OAAA;EACA,aAAA;EACA,sBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,kBAAA;AAFF;;AAKA;EACE,mBAAA;AAFF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;EACA,mBAAA;AADF;;AAIA;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,yBAAA;AADF;;AAIA;EACE,YAAA;EACA,mBAAA;EACA,WAAA;EACA,8BAAA;EACA,aAAA;EACA,2BAAA;EACA,8BAAA;EACA,mBAAA;EACA,gDAAA;AADF;;AAIA;EACE,0BAAA;AADF;;AAIA;EACE,eAAA;AADF;;AAIA;EACE,YAAA;EACA,WAAA;EACA,sBAAA;EACA,sCAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;AADF;;AAIA;EACE,aAAA;EACA,aAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,0BAAA;AADF;;AAIA;EACE,YAAA;EACA,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,sBAAA;EACA,oCAAA;AADF;;AAIA;EACE,OAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AADF;;AAIA;;GAAA;AAIA;EACE,YAAA;AAFF;;AAKA;EACE,mBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;AAFF;;AAKA;EACE,iBAAA;AAFF;;AAKA;EACE,OAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;AAFF;;AAKA;EACE,kBAAA;EACA,WAAA;EACA,SAAA;EACA,WAAA;EACA,UAAA;EACA,uBAAA;EACA,aAAA;AAFF;;AAKA;EACE,WAAA;EACA,YAAA;EACA,kBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,UAAA;AAFF","sourcesContent":["* {\n  font-family: \"Calligraffitti\", cursive;\n  font-family: \"Mooli\", sans-serif;\n  user-select: none;\n}\nbody {\n  background: antiquewhite;\n  margin: 0px;\n  height: 100vh;\n  background: linear-gradient(\n      rgba(124, 124, 124, 0.2),\n      rgba(124, 124, 124, 0.2)\n    ),\n    url(\"./assets/day.jpg\");\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n#locationTime {\n  top: 30px;\n  left: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  padding: 20px;\n}\n\n#currentTime {\n  margin: 10px;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  font-size: larger;\n}\n\n#currentTime > #year {\n  font-size: x-large;\n}\n\n.location {\n  font-size: xx-large;\n}\n.content {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  height: 100%;\n  color: aliceblue;\n}\n\n.temp {\n  font-size: xx-large;\n  font-weight: bolder;\n}\n\n.sliderBox {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: flex-end;\n}\n\n#box {\n  height: 40px;\n  border-radius: 20px;\n  width: 80px;\n  background: rgb(132, 172, 109);\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);\n}\n\n#txt {\n  padding: 0px 12px 0px 12px;\n}\n\n#box:hover {\n  cursor: pointer;\n}\n\n#slider {\n  height: 32px;\n  width: 32px;\n  border: 1px solid gold;\n  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);\n  margin: 0px 5px 0px 5px;\n  border-radius: 50%;\n  background: green;\n}\n\n#today {\n  padding: 30px;\n  display: flex;\n  flex-direction: row;\n}\n\n#today > div {\n  flex: 1;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 10px 0px 10px;\n}\n\n#today > div > img {\n  height: 50px;\n  padding-right: 5px;\n}\n\n.title {\n  font-size: larger;\n  padding-bottom: 7px;\n}\n\n#forecastData {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\n#forecastData > * {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  overflow: scroll;\n}\n\n#hourlyForecast {\n  align-items: center;\n}\n\n#hourlyForecast > * {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.forTime {\n  font-size: larger;\n  font-weight: bolder;\n}\n\n.hour {\n  width: 14.3vw;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n/* .hour > div {\n  width: 14.3vw;\n} */\n\n.hour > img {\n  height: 80px;\n}\n\n#dailyForecast > div > .day {\n  font-weight: bolder;\n  font-size: larger;\n}\n\n#dailyForecast > div > .imm {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n#dailyForecast > div > .imm > div > .max {\n  font-size: larger;\n}\n\n#dailyForecast > * {\n  flex: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\nform {\n  position: absolute;\n  width: 30vw;\n  top: 50px;\n  right: calc((100vw / 2) - 15vw);\n  z-index: 1;\n  border: 1px solid black;\n  display: flex;\n}\n\nform > input {\n  width: 100%;\n  height: 40px;\n  padding-left: 20px;\n  font-size: larger;\n}\n\nform > button {\n  width: 20%;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -662,7 +746,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function updateTime(date) {
-  console.log(date);
   const daysOfWeek = [
     "Sunday",
     "Monday",
@@ -693,7 +776,6 @@ function updateTime(date) {
   const dateData = new Date(dateRaw);
   const dayOfWeek = daysOfWeek[dateData.getDay()];
   const monthOfYear = monthsOfYear[dateData.getMonth()];
-  console.log(monthOfYear);
 
   const year = dateRaw.split("-")[0];
   const tarik = dateRaw.split("-")[1];
@@ -702,7 +784,7 @@ function updateTime(date) {
 
   const formattedHour = hour % 12 || 12;
 
-  const ampm = hour > 12 ? "PM" : "AM";
+  const ampm = hour >= 12 ? "PM" : "AM";
   const timeNow = `${formattedHour}:${minute} ${ampm}`;
 
   return {
@@ -713,38 +795,40 @@ function updateTime(date) {
     dayOfWeek,
   };
 }
-let html = "";
 
 // eslint-disable-next-line consistent-return
-function recursiveUpdateHour(weather, currentHour, num) {
-  if (num === 0) {
-    console.log(html);
-    return html;
+function recursiveUpdateHour(weather, currentHour, hours, count, index) {
+  if (count < 0) {
+    return;
   }
 
-  if (currentHour < 24) {
-    html += weather[0].hour[currentHour + 1].temp_c;
-
-    recursiveUpdateHour(weather, currentHour + 1, num - 1);
+  if (currentHour > 23) {
+    hours.push(weather[1].hour[index]);
+    recursiveUpdateHour(weather, currentHour, hours, count - 1, index + 1);
   } else {
-    html += weather[1].hour[0].temp_c;
-    recursiveUpdateHour(weather, 0, num - 1);
+    hours.push(weather[0].hour[currentHour]);
+    recursiveUpdateHour(weather, currentHour + 1, hours, count - 1, index);
   }
 }
 
 function updateForcast(weather) {
-  console.log(weather);
+  const hours = [];
 
   const forecast = document.querySelector("#forecastData");
 
   const hourForecast = document.createElement("div");
   hourForecast.id = "hourlyForecast";
   const currentHour = new Date().getHours();
-  recursiveUpdateHour(weather, currentHour, 5);
+  recursiveUpdateHour(weather, currentHour, hours, 23, 0);
+  forecast.appendChild(hourForecast);
+
+  domMain.displayHouryForecast(hours);
+
   const dailyForecast = document.createElement("div");
   dailyForecast.id = "dailyForecast";
+  forecast.appendChild(dailyForecast);
 
-  forecast.textContent = "a";
+  domMain.displayDailyForecast(weather);
 }
 
 const getInfo = (() => {
@@ -820,7 +904,7 @@ const domMain = (() => {
           ${dateInfo.year}
         </div>
         <div id="cdate">
-          ${dateInfo.monthOfYear} ${dateInfo.tarik}
+          ${dateInfo.monthOfYear} ${dateInfo.tarik} ${dateInfo.dayOfWeek}
         </div>
         <div id="ttime">
           ${dateInfo.timeNow}
@@ -834,8 +918,6 @@ const domMain = (() => {
     const content = document.createElement("div");
     content.classList.value = "content";
     content.innerHTML = "";
-
-    console.log("update");
 
     const weather = getInfo.locationTodayWeatherInfo(currentWeather);
 
@@ -936,8 +1018,70 @@ const domMain = (() => {
     updateForcast(currentWeather.forecast.forecastday);
   };
 
+  const displayHouryForecast = (hours) => {
+    const hourForecast = document.querySelector("#hourlyForecast");
+    let html = "";
+
+    hours.forEach((hour) => {
+      const [dishours, minute] = hour.time.split(" ")[1].split(":");
+
+      let formattedHour = dishours % 12 || dishours;
+      console.log(formattedHour);
+      formattedHour = formattedHour == 0 ? 12 : formattedHour;
+      const ampm = dishours >= 12 ? "pm" : "am";
+      const displayTime = `${formattedHour}:${minute} ${ampm}`;
+
+      html += `
+              <div>
+                <div class="forTime">${displayTime}</div>
+                <div class="hour">
+                  <img src=${hour.condition.icon}>
+                  <div>${hour.temp_c} ℃</div>
+                </div>
+              </div>
+      `;
+    });
+
+    hourForecast.innerHTML = html;
+  };
+
+  const displayDailyForecast = (weather) => {
+    let html = "";
+
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const nDay = new Date().getDay();
+
+    weather.forEach((day, index) => {
+      html += `<div>
+                <div class="day">${
+                  daysOfWeek[nDay + index > 6 ? nDay + index - 7 : nDay + index]
+                }</div>
+                <div class="imm">
+                  <div>
+                    <div class="max">${day.day.maxtemp_c}℃</div>
+                    <div class="min">${day.day.mintemp_c}℃</div> 
+                  </div>
+                  <img src=${day.day.condition.icon}>
+                </div>
+              </div>`;
+    });
+
+    document.querySelector("#dailyForecast").innerHTML = html;
+  };
+
   return {
     display,
+    displayHouryForecast,
+    displayDailyForecast,
   };
 })();
 
