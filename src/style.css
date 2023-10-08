@@ -149,7 +149,7 @@ body {
                   
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7); 
 }
 
 #hourlyForecast {
@@ -177,10 +177,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-/* .hour > div {
-  width: 14.3vw;
-} */
 
 .hour > img {
   height: 80px;
