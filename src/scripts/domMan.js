@@ -73,17 +73,16 @@ function recursiveUpdateHour(weather, currentHour, hours, count, index) {
   }
 }
 
-function updateForcast(weather) {
+function updateForcast(weather, wholeThing) {
   const hours = [];
 
   const forecast = document.querySelector("#forecastData");
 
   const hourForecast = document.createElement("div");
   hourForecast.id = "hourlyForecast";
-  const currentHour = new Date().getHours();
+  const currentHour = parseInt((wholeThing.location.localtime.split(' ')[1]).split(':')[0]);
   recursiveUpdateHour(weather, currentHour, hours, 23, 0);
   forecast.appendChild(hourForecast);
-
   domMain.displayHouryForecast(hours);
 
   const dailyForecast = document.createElement("div");
@@ -300,7 +299,7 @@ export const domMain = (() => {
       `;
     mainContent.appendChild(content);
     updateCurrTime(currentWeather.location.localtime);
-    updateForcast(currentWeather.forecast.forecastday);
+    updateForcast(currentWeather.forecast.forecastday, currentWeather);
   };
 
   const displayHouryForecast = (hours) => {
@@ -311,7 +310,7 @@ export const domMain = (() => {
       const [dishours, minute] = hour.time.split(" ")[1].split(":");
 
       let formattedHour = dishours % 12 || dishours;
-      formattedHour = formattedHour === 0 ? 12 : formattedHour;
+      formattedHour = formattedHour == 0 ? 12 : formattedHour;
       const ampm = dishours >= 12 ? "pm" : "am";
       const displayTime = `${formattedHour}:${minute} ${ampm}`;
       const temp = domMain.getCurrTempScaleC()
