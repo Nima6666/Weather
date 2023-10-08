@@ -894,7 +894,7 @@ function updateForcast(weather, wholeThing) {
   dailyForecast.id = "dailyForecast";
   forecast.appendChild(dailyForecast);
 
-  domMain.displayDailyForecast(weather);
+  domMain.displayDailyForecast(weather, wholeThing);
 }
 
 const getInfo = (() => {
@@ -1136,7 +1136,7 @@ const domMain = (() => {
     hourForecast.innerHTML = html;
   };
 
-  const displayDailyForecast = (weather) => {
+  const displayDailyForecast = (weather, wholeThing) => {
     let html = "";
 
     const daysOfWeek = [
@@ -1149,7 +1149,7 @@ const domMain = (() => {
       "Saturday",
     ];
 
-    const nDay = new Date().getDay();
+    const nDay = new Date(wholeThing.location.localtime.split(' ')[0]).getDay();
 
     weather.forEach((day, index) => {
       const tempMax = domMain.getCurrTempScaleC()
