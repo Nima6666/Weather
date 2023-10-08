@@ -1,6 +1,11 @@
 // eslint-disable-next-line import/prefer-default-export
 import { domMain } from "./domMan";
 
+let forcastWeather;
+
+// eslint-disable-next-line import/no-mutable-exports
+export const saveWeather = () => forcastWeather;
+
 async function weatherApi(latOrLocation, log) {
   let foreWeather;
   try {
@@ -13,11 +18,11 @@ async function weatherApi(latOrLocation, log) {
         `https://api.weatherapi.com/v1/forecast.json?key=4f780fb9d0a940998b1133518232609&q=${latOrLocation}&days=7`
       );
     }
-    const forcastWeather = await foreWeather.json();
-    console.log(forcastWeather);
+    document.querySelector("#content").innerHTML = "";
+    forcastWeather = await foreWeather.json();
     domMain.display(forcastWeather);
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
 }
 navigator.geolocation.getCurrentPosition((data) => {

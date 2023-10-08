@@ -1,8 +1,11 @@
+/* eslint-disable no-use-before-define */
 import thermometerImg from "../assets/thermometer.png";
 import rainImg from "../assets/rain.png";
 import humidityImg from "../assets/humidity.png";
 import visibilityImg from "../assets/visibility.png";
 import windImg from "../assets/wind.png";
+import night from "../assets/night.jpg";
+import day from "../assets/day.jpg";
 
 function updateTime(date) {
   const daysOfWeek = [
@@ -114,9 +117,17 @@ export const getInfo = (() => {
 
     const windSpeed = `${currentWeather.current.wind_kph} KM/PH`;
 
-    const high = `${forcastToday.day.maxtemp_c} ℃`;
+    const high = `${
+      domMain.getCurrTempScaleC()
+        ? forcastToday.day.maxtemp_c
+        : forcastToday.day.maxtemp_f
+    }`;
 
-    const low = `${forcastToday.day.mintemp_c} ℃`;
+    const low = `${
+      domMain.getCurrTempScaleC()
+        ? forcastToday.day.mintemp_c
+        : forcastToday.day.mintemp_f
+    }`;
 
     const chanceOfRain = `${forcastToday.day.daily_chance_of_rain}%`;
 
@@ -144,6 +155,11 @@ export const getInfo = (() => {
 
 // eslint-disable-next-line import/prefer-default-export
 export const domMain = (() => {
+  let isDegreeCel = true;
+  const getCurrTempScaleC = () => isDegreeCel;
+  const changeCurrTempScale = () => {
+    isDegreeCel = !isDegreeCel;
+  };
   const mainContent = document.querySelector("#content");
 
   const updateCurrTime = (date) => {
@@ -174,9 +190,17 @@ export const domMain = (() => {
   };
 
   const display = (currentWeather) => {
+    const body = document.querySelector("body");
     const content = document.createElement("div");
     content.classList.value = "content";
     content.innerHTML = "";
+
+    // eslint-disable-next-line no-unused-expressions
+    if (currentWeather.current.is_day) {
+      body.style.backgroundImage = `url(${day})`;
+    } else {
+      body.style.backgroundImage = `url(${night})`;
+    }
 
     const weather = getInfo.locationTodayWeatherInfo(currentWeather);
 
@@ -186,7 +210,11 @@ export const domMain = (() => {
             ${currentWeather.location.name}, ${currentWeather.location.country}
           </div>
           <div id ="time"></div>
-          <div class="temp">${weather.tempInDegC}</div>
+          <div class="temp">${
+            domMain.getCurrTempScaleC()
+              ? weather.tempInDegC
+              : weather.tempInDegF
+          }</div>
           <div>High-Low: ${weather.high} - ${weather.low}</div>
         </div>
         <div id="today">
@@ -197,7 +225,11 @@ export const domMain = (() => {
                 Feels Like
               </div>
               <div>
-                ${weather.feelsLikeDegC}
+                ${
+                  domMain.getCurrTempScaleC()
+                    ? weather.feelsLikeDegC
+                    : weather.feelsLikeDegF
+                }
               </div>
             </div>
           </div>
@@ -265,12 +297,6 @@ export const domMain = (() => {
         <div id="forecastData">
         
         </div>
-        <div class="sliderBox">
-          <div id="box">
-            <div id="slider"></div>
-            <div id="txt">C</div>
-          </div>
-        </div>
       `;
     mainContent.appendChild(content);
     updateCurrTime(currentWeather.location.localtime);
@@ -285,16 +311,19 @@ export const domMain = (() => {
       const [dishours, minute] = hour.time.split(" ")[1].split(":");
 
       let formattedHour = dishours % 12 || dishours;
-      formattedHour = formattedHour == 0 ? 12 : formattedHour;
+      formattedHour = formattedHour === 0 ? 12 : formattedHour;
       const ampm = dishours >= 12 ? "pm" : "am";
       const displayTime = `${formattedHour}:${minute} ${ampm}`;
+      const temp = domMain.getCurrTempScaleC()
+        ? `${hour.temp_c} ℃`
+        : `${hour.temp_f} °F`;
 
       html += `
               <div>
                 <div class="forTime">${index ? displayTime : "Current"}</div>
                 <div class="hour">
                   <img src=${hour.condition.icon}>
-                  <div>${hour.temp_c} ℃</div>
+                  <div>${temp}</div>
                 </div>
               </div>
       `;
@@ -319,6 +348,12 @@ export const domMain = (() => {
     const nDay = new Date().getDay();
 
     weather.forEach((day, index) => {
+      const tempMax = domMain.getCurrTempScaleC()
+        ? `${day.day.maxtemp_c} ℃`
+        : `${day.day.maxtemp_f} °F`;
+      const tempMin = domMain.getCurrTempScaleC()
+        ? `${day.day.mintemp_c} ℃`
+        : `${day.day.mintemp_f} °F`;
       html += `<div>
                 <div class="day">${
                   index
@@ -329,8 +364,8 @@ export const domMain = (() => {
                 }</div>
                 <div class="imm">
                   <div>
-                    <div class="max">${day.day.maxtemp_c}℃</div>
-                    <div class="min">${day.day.mintemp_c}℃</div> 
+                    <div class="max">${tempMax}</div>
+                    <div class="min">${tempMin}</div> 
                   </div>
                   <img src=${day.day.condition.icon}>
                 </div>
@@ -344,5 +379,7 @@ export const domMain = (() => {
     display,
     displayHouryForecast,
     displayDailyForecast,
+    getCurrTempScaleC,
+    changeCurrTempScale,
   };
 })();

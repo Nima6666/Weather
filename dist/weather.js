@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.css":
@@ -7,7 +8,6 @@
   \****************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -102,10 +102,11 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease all;
 }
 
 #txt {
-  padding: 0px 12px 0px 12px;
+  padding: 0px 10px 0px 10px;
 }
 
 #box:hover {
@@ -120,6 +121,7 @@ body {
   margin: 0px 5px 0px 5px;
   border-radius: 50%;
   background: green;
+  transition: 0.3s ease all;
 }
 
 #today {
@@ -259,7 +261,36 @@ form > button {
 form > button:hover {
   background: rgba(255, 255, 255, 0.2);
   color: rgb(183, 199, 212);
-}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sCAAA;EACA,gCAAA;EACA,iBAAA;AACF;;AACA;EACE,wBAAA;EACA,WAAA;EACA,aAAA;EACA,wHAAA;EAKA,sBAAA;EACA,4BAAA;AAFF;;AAKA;EACE,YAAA;AAFF;;AAKA;EACE,SAAA;EACA,UAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,aAAA;AAFF;;AAKA;EACE,YAAA;EACA,OAAA;EACA,aAAA;EACA,sBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,kBAAA;AAFF;;AAKA;EACE,mBAAA;AAFF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;EACA,mBAAA;AADF;;AAIA;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,yBAAA;AADF;;AAIA;EACE,YAAA;EACA,mBAAA;EACA,WAAA;EACA,8BAAA;EACA,aAAA;EACA,2BAAA;EACA,8BAAA;EACA,mBAAA;EACA,gDAAA;AADF;;AAIA;EACE,0BAAA;AADF;;AAIA;EACE,eAAA;AADF;;AAIA;EACE,YAAA;EACA,WAAA;EACA,sBAAA;EACA,sCAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;AADF;;AAIA;EACE,aAAA;EACA,aAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,0BAAA;AADF;;AAIA;EACE,YAAA;EACA,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,sBAAA;EACA,oCAAA;EACA,0BAAA;AADF;;AAIA;EACE,OAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AADF;;AAIA;;GAAA;AAIA;EACE,YAAA;AAFF;;AAKA;EACE,mBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;AAFF;;AAKA;EACE,iBAAA;AAFF;;AAKA;EACE,OAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;AAFF;;AAKA;EACE,kBAAA;EACA,WAAA;EACA,SAAA;EACA,WAAA;EACA,UAAA;EACA,aAAA;AAFF;;AAKA;EACE,sBAAA;EACA,aAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,iBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,oCAAA;EACA,yBAAA;EACA,gBAAA;AAFF;;AAKA;EACE,YAAA;EACA,oCAAA;AAFF;;AAKA;EACE,UAAA;EACA,mBAAA;EACA,oCAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBAAA;EACA,yBAAA;EACA,YAAA;AAFF;;AAKA;EACE,oCAAA;EACA,yBAAA;AAFF","sourcesContent":["* {\n  font-family: \"Calligraffitti\", cursive;\n  font-family: \"Mooli\", sans-serif;\n  user-select: none;\n}\nbody {\n  background: antiquewhite;\n  margin: 0px;\n  height: 100vh;\n  background: linear-gradient(\n      rgba(124, 124, 124, 0.2),\n      rgba(124, 124, 124, 0.2)\n    ),\n    url(\"./assets/day.jpg\");\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n#content {\n  height: 100%;\n}\n\n#locationTime {\n  top: 30px;\n  left: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  padding: 20px;\n}\n\n#currentTime {\n  margin: 10px;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  font-size: larger;\n}\n\n#currentTime > #year {\n  font-size: x-large;\n}\n\n.location {\n  font-size: xx-large;\n}\n.content {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  height: 100%;\n  color: aliceblue;\n}\n\n.temp {\n  font-size: xx-large;\n  font-weight: bolder;\n}\n\n.sliderBox {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: flex-end;\n}\n\n#box {\n  height: 40px;\n  border-radius: 20px;\n  width: 80px;\n  background: rgb(132, 172, 109);\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);\n}\n\n#txt {\n  padding: 0px 12px 0px 12px;\n}\n\n#box:hover {\n  cursor: pointer;\n}\n\n#slider {\n  height: 32px;\n  width: 32px;\n  border: 1px solid gold;\n  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);\n  margin: 0px 5px 0px 5px;\n  border-radius: 50%;\n  background: green;\n}\n\n#today {\n  padding: 30px;\n  display: flex;\n  flex-direction: row;\n}\n\n#today > div {\n  flex: 1;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 10px 0px 10px;\n}\n\n#today > div > img {\n  height: 50px;\n  padding-right: 5px;\n}\n\n.title {\n  font-size: larger;\n  padding-bottom: 7px;\n}\n\n#forecastData {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background-color: rgba(0, 0, 0, 0.3);\n  backdrop-filter: blur(1px);\n}\n\n#forecastData > * {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  overflow: scroll;\n}\n\n#hourlyForecast {\n  align-items: center;\n}\n\n#hourlyForecast > * {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.forTime {\n  font-size: larger;\n  font-weight: bolder;\n}\n\n.hour {\n  width: 14.3vw;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n/* .hour > div {\n  width: 14.3vw;\n} */\n\n.hour > img {\n  height: 80px;\n}\n\n#dailyForecast > div > .day {\n  font-weight: bolder;\n  font-size: larger;\n}\n\n#dailyForecast > div > .imm {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n#dailyForecast > div > .imm > div > .max {\n  font-size: larger;\n}\n\n#dailyForecast > * {\n  flex: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\nform {\n  position: absolute;\n  width: 30vw;\n  top: 50px;\n  right: calc((100vw / 2) - 15vw);\n  z-index: 1;\n  display: flex;\n}\n\nform > input {\n  box-sizing: border-box;\n  outline: none;\n  width: 100%;\n  height: 40px;\n  padding-left: 20px;\n  font-size: larger;\n  background: inherit;\n  border: 2px solid wheat;\n  border-radius: 5px;\n  background: rgba(255, 255, 255, 0.4);\n  transition: 0.3s ease all;\n  color: aliceblue;\n}\n\nform > input:focus {\n  border: none;\n  border: 2px solid rgb(169, 199, 169);\n}\n\nform > button {\n  width: 20%;\n  background: inherit;\n  background: rgba(255, 255, 255, 0.4);\n  border-radius: 5px;\n  color: aliceblue;\n  font-weight: bolder;\n  transition: 0.3s ease all;\n  border: none;\n}\n\nform > button:hover {\n  background: rgba(255, 255, 255, 0.2);\n  color: rgb(183, 199, 212);\n}\n"],"sourceRoot":""}]);
+}
+
+.loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#loadingImg {
+  height: 30vh;
+}
+
+.loading > .fetching {
+  font-size: 100px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.rotate {
+  animation: rotate 1s linear infinite;
+}`, "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAAA;EACE,sCAAA;EACA,gCAAA;EACA,iBAAA;AACF;;AACA;EACE,wBAAA;EACA,WAAA;EACA,aAAA;EACA,wHAAA;EAKA,sBAAA;EACA,4BAAA;AAFF;;AAKA;EACE,YAAA;AAFF;;AAKA;EACE,SAAA;EACA,UAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,aAAA;AAFF;;AAKA;EACE,YAAA;EACA,OAAA;EACA,aAAA;EACA,sBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,kBAAA;AAFF;;AAKA;EACE,mBAAA;AAFF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;EACA,mBAAA;AADF;;AAIA;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,yBAAA;AADF;;AAIA;EACE,YAAA;EACA,mBAAA;EACA,WAAA;EACA,8BAAA;EACA,aAAA;EACA,2BAAA;EACA,8BAAA;EACA,mBAAA;EACA,gDAAA;EACA,yBAAA;AADF;;AAIA;EACE,0BAAA;AADF;;AAIA;EACE,eAAA;AADF;;AAIA;EACE,YAAA;EACA,WAAA;EACA,sBAAA;EACA,sCAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;EACA,yBAAA;AADF;;AAIA;EACE,aAAA;EACA,aAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,0BAAA;AADF;;AAIA;EACE,YAAA;EACA,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,OAAA;EACA,aAAA;EACA,sBAAA;EACA,oCAAA;EACA,0BAAA;AADF;;AAIA;EACE,OAAA;EACA,WAAA;EACA,aAAA;EACA,gBAAA;AADF;;AAIA;EACE,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AADF;;AAIA;EACE,iBAAA;EACA,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AADF;;AAIA;;GAAA;AAIA;EACE,YAAA;AAFF;;AAKA;EACE,mBAAA;EACA,iBAAA;AAFF;;AAKA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;AAFF;;AAKA;EACE,iBAAA;AAFF;;AAKA;EACE,OAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;AAFF;;AAKA;EACE,kBAAA;EACA,WAAA;EACA,SAAA;EACA,WAAA;EACA,UAAA;EACA,aAAA;AAFF;;AAKA;EACE,sBAAA;EACA,aAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,iBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,oCAAA;EACA,yBAAA;EACA,gBAAA;AAFF;;AAKA;EACE,YAAA;EACA,oCAAA;AAFF;;AAKA;EACE,UAAA;EACA,mBAAA;EACA,oCAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBAAA;EACA,yBAAA;EACA,YAAA;AAFF;;AAKA;EACE,oCAAA;EACA,yBAAA;AAFF;;AAKA;EACE,aAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,YAAA;AAFF;;AAKA;EACE,YAAA;AAFF;;AAKA;EACE,gBAAA;AAFF;;AAKA;EACE;IACE,uBAAA;EAFF;EAIA;IACE,yBAAA;EAFF;AACF;AAKA;EACE,oCAAA;AAHF","sourcesContent":["* {\n  font-family: \"Calligraffitti\", cursive;\n  font-family: \"Mooli\", sans-serif;\n  user-select: none;\n}\nbody {\n  background: antiquewhite;\n  margin: 0px;\n  height: 100vh;\n  background: linear-gradient(\n      rgba(124, 124, 124, 0.2),\n      rgba(124, 124, 124, 0.2)\n    ),\n    url(\"./assets/day.jpg\");\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n\n#content {\n  height: 100%;\n}\n\n#locationTime {\n  top: 30px;\n  left: 50px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  padding: 20px;\n}\n\n#currentTime {\n  margin: 10px;\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  font-size: larger;\n}\n\n#currentTime > #year {\n  font-size: x-large;\n}\n\n.location {\n  font-size: xx-large;\n}\n.content {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  height: 100%;\n  color: aliceblue;\n}\n\n.temp {\n  font-size: xx-large;\n  font-weight: bolder;\n}\n\n.sliderBox {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  height: 40px;\n  display: flex;\n  justify-content: flex-end;\n}\n\n#box {\n  height: 40px;\n  border-radius: 20px;\n  width: 80px;\n  background: rgb(132, 172, 109);\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n  align-items: center;\n  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5);\n  transition: 0.3s ease all;\n}\n\n#txt {\n  padding: 0px 10px 0px 10px;\n}\n\n#box:hover {\n  cursor: pointer;\n}\n\n#slider {\n  height: 32px;\n  width: 32px;\n  border: 1px solid gold;\n  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);\n  margin: 0px 5px 0px 5px;\n  border-radius: 50%;\n  background: green;\n  transition: 0.3s ease all;\n}\n\n#today {\n  padding: 30px;\n  display: flex;\n  flex-direction: row;\n}\n\n#today > div {\n  flex: 1;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 10px 0px 10px;\n}\n\n#today > div > img {\n  height: 50px;\n  padding-right: 5px;\n}\n\n.title {\n  font-size: larger;\n  padding-bottom: 7px;\n}\n\n#forecastData {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  background-color: rgba(0, 0, 0, 0.3);\n  backdrop-filter: blur(1px);\n}\n\n#forecastData > * {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  overflow: scroll;\n}\n\n#hourlyForecast {\n  align-items: center;\n}\n\n#hourlyForecast > * {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n.forTime {\n  font-size: larger;\n  font-weight: bolder;\n}\n\n.hour {\n  width: 14.3vw;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n/* .hour > div {\n  width: 14.3vw;\n} */\n\n.hour > img {\n  height: 80px;\n}\n\n#dailyForecast > div > .day {\n  font-weight: bolder;\n  font-size: larger;\n}\n\n#dailyForecast > div > .imm {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n#dailyForecast > div > .imm > div > .max {\n  font-size: larger;\n}\n\n#dailyForecast > * {\n  flex: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n\nform {\n  position: absolute;\n  width: 30vw;\n  top: 50px;\n  right: calc((100vw / 2) - 15vw);\n  z-index: 1;\n  display: flex;\n}\n\nform > input {\n  box-sizing: border-box;\n  outline: none;\n  width: 100%;\n  height: 40px;\n  padding-left: 20px;\n  font-size: larger;\n  background: inherit;\n  border: 2px solid wheat;\n  border-radius: 5px;\n  background: rgba(255, 255, 255, 0.4);\n  transition: 0.3s ease all;\n  color: aliceblue;\n}\n\nform > input:focus {\n  border: none;\n  border: 2px solid rgb(169, 199, 169);\n}\n\nform > button {\n  width: 20%;\n  background: inherit;\n  background: rgba(255, 255, 255, 0.4);\n  border-radius: 5px;\n  color: aliceblue;\n  font-weight: bolder;\n  transition: 0.3s ease all;\n  border: none;\n}\n\nform > button:hover {\n  background: rgba(255, 255, 255, 0.2);\n  color: rgb(183, 199, 212);\n}\n\n.loading {\n  height: 100vh;\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: white;\n}\n\n#loadingImg {\n  height: 30vh;\n}\n\n.loading > .fetching {\n  font-size: 100px;\n}\n\n@keyframes rotate {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n.rotate {\n  animation: rotate 1s linear infinite;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -272,7 +303,6 @@ form > button:hover {
   \*****************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -367,7 +397,6 @@ module.exports = function (cssWithMappingToString) {
   \********************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (url, options) {
@@ -403,7 +432,6 @@ module.exports = function (url, options) {
   \************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (item) {
@@ -429,7 +457,6 @@ module.exports = function (item) {
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -484,7 +511,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDOM = [];
@@ -578,7 +604,6 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -622,7 +647,6 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -642,7 +666,6 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -662,7 +685,6 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -733,7 +755,6 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -757,7 +778,6 @@ module.exports = styleTagTransform;
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   domMain: () => (/* binding */ domMain),
@@ -768,6 +788,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_humidity_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/humidity.png */ "./src/assets/humidity.png");
 /* harmony import */ var _assets_visibility_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/visibility.png */ "./src/assets/visibility.png");
 /* harmony import */ var _assets_wind_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/wind.png */ "./src/assets/wind.png");
+/* harmony import */ var _assets_night_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/night.jpg */ "./src/assets/night.jpg");
+/* harmony import */ var _assets_day_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/day.jpg */ "./src/assets/day.jpg");
+/* eslint-disable no-use-before-define */
+
+
 
 
 
@@ -884,9 +909,17 @@ const getInfo = (() => {
 
     const windSpeed = `${currentWeather.current.wind_kph} KM/PH`;
 
-    const high = `${forcastToday.day.maxtemp_c} ℃`;
+    const high = `${
+      domMain.getCurrTempScaleC()
+        ? forcastToday.day.maxtemp_c
+        : forcastToday.day.maxtemp_f
+    }`;
 
-    const low = `${forcastToday.day.mintemp_c} ℃`;
+    const low = `${
+      domMain.getCurrTempScaleC()
+        ? forcastToday.day.mintemp_c
+        : forcastToday.day.mintemp_f
+    }`;
 
     const chanceOfRain = `${forcastToday.day.daily_chance_of_rain}%`;
 
@@ -914,6 +947,11 @@ const getInfo = (() => {
 
 // eslint-disable-next-line import/prefer-default-export
 const domMain = (() => {
+  let isDegreeCel = true;
+  const getCurrTempScaleC = () => isDegreeCel;
+  const changeCurrTempScale = () => {
+    isDegreeCel = !isDegreeCel;
+  };
   const mainContent = document.querySelector("#content");
 
   const updateCurrTime = (date) => {
@@ -944,9 +982,17 @@ const domMain = (() => {
   };
 
   const display = (currentWeather) => {
+    const body = document.querySelector("body");
     const content = document.createElement("div");
     content.classList.value = "content";
     content.innerHTML = "";
+
+    // eslint-disable-next-line no-unused-expressions
+    if (currentWeather.current.is_day) {
+      body.style.backgroundImage = `url(${_assets_day_jpg__WEBPACK_IMPORTED_MODULE_6__})`;
+    } else {
+      body.style.backgroundImage = `url(${_assets_night_jpg__WEBPACK_IMPORTED_MODULE_5__})`;
+    }
 
     const weather = getInfo.locationTodayWeatherInfo(currentWeather);
 
@@ -956,7 +1002,11 @@ const domMain = (() => {
             ${currentWeather.location.name}, ${currentWeather.location.country}
           </div>
           <div id ="time"></div>
-          <div class="temp">${weather.tempInDegC}</div>
+          <div class="temp">${
+            domMain.getCurrTempScaleC()
+              ? weather.tempInDegC
+              : weather.tempInDegF
+          }</div>
           <div>High-Low: ${weather.high} - ${weather.low}</div>
         </div>
         <div id="today">
@@ -967,7 +1017,11 @@ const domMain = (() => {
                 Feels Like
               </div>
               <div>
-                ${weather.feelsLikeDegC}
+                ${
+                  domMain.getCurrTempScaleC()
+                    ? weather.feelsLikeDegC
+                    : weather.feelsLikeDegF
+                }
               </div>
             </div>
           </div>
@@ -1035,12 +1089,6 @@ const domMain = (() => {
         <div id="forecastData">
         
         </div>
-        <div class="sliderBox">
-          <div id="box">
-            <div id="slider"></div>
-            <div id="txt">C</div>
-          </div>
-        </div>
       `;
     mainContent.appendChild(content);
     updateCurrTime(currentWeather.location.localtime);
@@ -1055,16 +1103,19 @@ const domMain = (() => {
       const [dishours, minute] = hour.time.split(" ")[1].split(":");
 
       let formattedHour = dishours % 12 || dishours;
-      formattedHour = formattedHour == 0 ? 12 : formattedHour;
+      formattedHour = formattedHour === 0 ? 12 : formattedHour;
       const ampm = dishours >= 12 ? "pm" : "am";
       const displayTime = `${formattedHour}:${minute} ${ampm}`;
+      const temp = domMain.getCurrTempScaleC()
+        ? `${hour.temp_c} ℃`
+        : `${hour.temp_f} °F`;
 
       html += `
               <div>
                 <div class="forTime">${index ? displayTime : "Current"}</div>
                 <div class="hour">
                   <img src=${hour.condition.icon}>
-                  <div>${hour.temp_c} ℃</div>
+                  <div>${temp}</div>
                 </div>
               </div>
       `;
@@ -1089,6 +1140,12 @@ const domMain = (() => {
     const nDay = new Date().getDay();
 
     weather.forEach((day, index) => {
+      const tempMax = domMain.getCurrTempScaleC()
+        ? `${day.day.maxtemp_c} ℃`
+        : `${day.day.maxtemp_f} °F`;
+      const tempMin = domMain.getCurrTempScaleC()
+        ? `${day.day.mintemp_c} ℃`
+        : `${day.day.mintemp_f} °F`;
       html += `<div>
                 <div class="day">${
                   index
@@ -1099,8 +1156,8 @@ const domMain = (() => {
                 }</div>
                 <div class="imm">
                   <div>
-                    <div class="max">${day.day.maxtemp_c}℃</div>
-                    <div class="min">${day.day.mintemp_c}℃</div> 
+                    <div class="max">${tempMax}</div>
+                    <div class="min">${tempMin}</div> 
                   </div>
                   <img src=${day.day.condition.icon}>
                 </div>
@@ -1114,6 +1171,8 @@ const domMain = (() => {
     display,
     displayHouryForecast,
     displayDailyForecast,
+    getCurrTempScaleC,
+    changeCurrTempScale,
   };
 })();
 
@@ -1126,14 +1185,19 @@ const domMain = (() => {
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   saveWeather: () => (/* binding */ saveWeather)
 /* harmony export */ });
 /* harmony import */ var _domMan__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domMan */ "./src/scripts/domMan.js");
 // eslint-disable-next-line import/prefer-default-export
 
+
+let forcastWeather;
+
+// eslint-disable-next-line import/no-mutable-exports
+const saveWeather = () => forcastWeather;
 
 async function weatherApi(latOrLocation, log) {
   let foreWeather;
@@ -1147,11 +1211,11 @@ async function weatherApi(latOrLocation, log) {
         `https://api.weatherapi.com/v1/forecast.json?key=4f780fb9d0a940998b1133518232609&q=${latOrLocation}&days=7`
       );
     }
-    const forcastWeather = await foreWeather.json();
-    console.log(forcastWeather);
+    document.querySelector("#content").innerHTML = "";
+    forcastWeather = await foreWeather.json();
     _domMan__WEBPACK_IMPORTED_MODULE_0__.domMain.display(forcastWeather);
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
 }
 navigator.geolocation.getCurrentPosition((data) => {
@@ -1169,7 +1233,6 @@ navigator.geolocation.getCurrentPosition((data) => {
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "day.jpg";
 
 /***/ }),
@@ -1180,8 +1243,27 @@ module.exports = __webpack_require__.p + "day.jpg";
   \*********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "humidity.png";
+
+/***/ }),
+
+/***/ "./src/assets/loading.png":
+/*!********************************!*\
+  !*** ./src/assets/loading.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "loading.png";
+
+/***/ }),
+
+/***/ "./src/assets/night.jpg":
+/*!******************************!*\
+  !*** ./src/assets/night.jpg ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "night.jpg";
 
 /***/ }),
 
@@ -1191,7 +1273,6 @@ module.exports = __webpack_require__.p + "humidity.png";
   \*****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "rain.png";
 
 /***/ }),
@@ -1202,7 +1283,6 @@ module.exports = __webpack_require__.p + "rain.png";
   \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "thermometer.png";
 
 /***/ }),
@@ -1213,7 +1293,6 @@ module.exports = __webpack_require__.p + "thermometer.png";
   \***********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "visibility.png";
 
 /***/ }),
@@ -1224,7 +1303,6 @@ module.exports = __webpack_require__.p + "visibility.png";
   \*****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 module.exports = __webpack_require__.p + "wind.png";
 
 /***/ })
@@ -1372,29 +1450,87 @@ var __webpack_exports__ = {};
 /*!*******************************!*\
   !*** ./src/scripts/script.js ***!
   \*******************************/
-const { default: weatherApi } = __webpack_require__(/*! ./weatherApi */ "./src/scripts/weatherApi.js");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _assets_loading_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/loading.png */ "./src/assets/loading.png");
+/* harmony import */ var _domMan__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./domMan */ "./src/scripts/domMan.js");
+
+
+
+const { default: weatherApi, saveWeather } = __webpack_require__(/*! ./weatherApi */ "./src/scripts/weatherApi.js");
 
 __webpack_require__(/*! ../style.css */ "./src/style.css");
 __webpack_require__(/*! ./weatherApi */ "./src/scripts/weatherApi.js");
 
 const buttonHandler = (() => {
-  const submitLocation = () => {
+  const loadingS = () => {
+    document.querySelector("#content").innerHTML = `
+            <div class="loading">
+              <div class="fetching">Fetching Data...</div>
+              <img id="loadingImg" src = ${_assets_loading_png__WEBPACK_IMPORTED_MODULE_0__} class="rotate">
+            </div>
+            `;
+  };
+
+  const submit = () => {
     const location = document.querySelector("#Slocation").value;
-    document.querySelector("#content").innerHTML = "";
     weatherApi(location);
   };
 
+  const changeTemp = () => {
+    const content = document.querySelector(".content");
+    if (!content) return;
+    // eslint-disable-next-line no-unused-expressions
+    _domMan__WEBPACK_IMPORTED_MODULE_1__.domMain.getCurrTempScaleC() ? (content.id = "F") : (content.id = "C");
+    _domMan__WEBPACK_IMPORTED_MODULE_1__.domMain.changeCurrTempScale();
+    if (content.id === "F") {
+      document
+        .querySelector("#slider")
+        .setAttribute(
+          "style",
+          "position:absolute; transform: translateX(-36px)"
+        );
+      document.querySelector("#txt").textContent = "℃";
+      document
+        .querySelector("#box")
+        .setAttribute("style", "background: rgb(216, 196, 105);");
+
+      document.querySelector("#content").innerHTML = "";
+      _domMan__WEBPACK_IMPORTED_MODULE_1__.domMain.display(saveWeather());
+    } else {
+      document
+        .querySelector("#slider")
+        .setAttribute("style", " transform: translateX(0px)");
+      document.querySelector("#txt").textContent = "°F";
+      document
+        .querySelector("#box")
+        .setAttribute("style", "background: rgb(132, 172, 109);");
+      document.querySelector("#content").innerHTML = "";
+      _domMan__WEBPACK_IMPORTED_MODULE_1__.domMain.display(saveWeather());
+    }
+  };
+
   return {
-    submitLocation,
+    loadingS,
+    changeTemp,
+    submit,
   };
 })();
 
 const form = document.querySelector("#loc");
 
+const sliderBox = document.querySelector("#box");
+
 form.addEventListener("submit", () => {
-  buttonHandler.submitLocation();
+  buttonHandler.submit();
+  buttonHandler.loadingS();
   form.reset();
 });
+
+sliderBox.addEventListener("click", () => {
+  buttonHandler.changeTemp();
+});
+
+buttonHandler.loadingS();
 
 })();
 
